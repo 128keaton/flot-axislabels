@@ -385,7 +385,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                             navigator.appName == 'Microsoft Internet Explorer') {
                             var ua = navigator.userAgent;
                             var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
-                            if (re.exec(ua) != null) {
+                            var rv = null;
+                            var rer = re.exec(ua);
+                            if (rer == null) {
+                                re = new RegExp("Trident\/[0-9+].[0-9+]; rv:[0-9]{1,}[\.0-9]{0,}");
+                                rer = re.exec(ua);
+                            } 
+                            if (rer != null) {
                                 rv = parseFloat(RegExp.$1);
                             }
                             if (rv >= 9 && !opts.axisLabelUseCanvas && !opts.axisLabelUseHtml) {
