@@ -384,17 +384,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                         if (!opts.axisLabelUseHtml &&
                             navigator.appName == 'Microsoft Internet Explorer') {
                             var ua = navigator.userAgent;
-                            var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
-                            var rv = null;
+                            // https://stackoverflow.com/questions/29296524/regex-to-detect-ie-5-6-7-and-8-but-no-others/
+                            var re  = new RegExp("^.*MSIE [5-8](?:\.[0-9]+)?(?!.*Trident\/[5-9]\.0).*$");
                             var rer = re.exec(ua);
-                            if (rer == null) {
-                                re = new RegExp("Trident\/[0-9+].[0-9+]; rv:[0-9]{1,}[\.0-9]{0,}");
-                                rer = re.exec(ua);
-                            } 
-                            if (rer != null) {
-                                rv = parseFloat(RegExp.$1);
-                            }
-                            if (rv >= 9 && !opts.axisLabelUseCanvas && !opts.axisLabelUseHtml) {
+                            if (rer == null && !opts.axisLabelUseCanvas && !opts.axisLabelUseHtml) {
                                 renderer = CssTransformAxisLabel;
                             } else if (!opts.axisLabelUseCanvas && !opts.axisLabelUseHtml) {
                                 renderer = IeTransformAxisLabel;
