@@ -1,0 +1,24 @@
+{
+  "name": "flot-axislabels",
+  "version": "0.0.1",
+  "description": "Plugin for jQuery Flot",
+  "main": "jquery.flot.axislabels.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/128keaton/flot-axislabels.git"
+  },
+  "keywords": [
+    "flot",
+    "axis",
+    "labels"
+  ],
+  "author": "xuanluo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/128keaton/flot-axislabels/issues"
+  },
+  "homepage": "https://github.com/128keaton/flot-axislabels#readme"
+}
