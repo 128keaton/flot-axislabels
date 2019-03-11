@@ -1,6 +1,6 @@
 {
   "name": "flot-axislabels",
-  "version": "0.0.1",
+  "version": "2.0.2",
   "description": "Plugin for jQuery Flot",
   "main": "jquery.flot.axislabels.js",
   "scripts": {
